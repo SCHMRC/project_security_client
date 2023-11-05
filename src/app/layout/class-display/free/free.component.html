@@ -1,0 +1,65 @@
+<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
+  <mat-tab label="Uscite del giorno">
+    <div class="container">
+      <div class="row row__header">
+        <div class="row__header-title">LIBERO</div>
+      </div>
+      <div class="row row__start">
+        <div class="row__start-title">Classe <b>3DT</b> uscite del giorno {{date | date: 'dd/MM/YY'}}</div>
+      </div>
+      <section class="row__table" tabindex="0">
+        <table mat-table [dataSource]="dataSource">
+          <!-- Position Column -->
+          <ng-container matColumnDef="ora">
+            <th mat-header-cell *matHeaderCellDef> Ora </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="tempo">
+            <th mat-header-cell *matHeaderCellDef> Tempo </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"style="background-color: green;"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </section>
+
+    </div>
+  </mat-tab>
+  <mat-tab label="Stato bagni">
+    <div class="container">
+      <section class="row__table" tabindex="0" style="height: 100%;">
+        <table mat-table [dataSource]="dataSourceStatus">
+          <tr mat-header-row *matHeaderRowDef="displayedColumnsSummary; sticky: true" style="background-color: green;"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumnsSummary;index as i;" [ngStyle]="{'background-color': (i%2==0 ? 'white' : '#f2f2f2')}"></tr>
+          <!-- Position Column -->
+          <ng-container matColumnDef="idLocale">
+            <th mat-header-cell *matHeaderCellDef> idLocale </th>
+            <td mat-cell *matCellDef="let element;" [ngStyle]="{'color': (element.bagni_totali == element.bagni_occupati ? 'red' : 'black')}">LB-{{element.idLocaleFK}}</td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="livello">
+            <th mat-header-cell *matHeaderCellDef> Livello </th>
+            <td mat-cell *matCellDef="let element">{{element.livello}} </td>
+          </ng-container>
+          <!-- Name Column -->
+          <ng-container matColumnDef="bagni_liberi">
+            <th mat-header-cell *matHeaderCellDef> Bagni totali </th>
+            <td mat-cell *matCellDef="let element">{{element.bagni_totali}}</td>
+          </ng-container>
+          <!-- Name Column -->
+          <ng-container matColumnDef="bagni_occupati">
+            <th mat-header-cell *matHeaderCellDef> Bagni occupati </th>
+            <td mat-cell *matCellDef="let element"> {{element.bagni_occupati}}</td>
+          </ng-container>
+
+
+        </table>
+      </section>
+    </div>
+  </mat-tab>
+</mat-tab-group>
+

@@ -1,1 +1,11 @@
-<button mat-raised-button color="primary" (click)="start()">Primary</button>
+<button mat-raised-button color="primary" (click)="start(0)">Primary</button>
+<button mat-raised-button color="primary" (click)="start(1)">Primary</button>
+<form [formGroup]="form" class="form">
+  <input type="text" name="idClasseFK" formControlName="idClasseFK">
+  <input type="text" name="timestamp" formControlName="timestamp">
+  <button (click)="onStart()">Invia</button>
+</form>
+
+<div class="test">
+  
+</div>
