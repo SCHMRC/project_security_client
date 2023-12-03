@@ -1,5 +1,9 @@
 
-<app-busy></app-busy>
+<app-busy *ngIf="flag; else alt"></app-busy>
+<ng-template #alt>
 <app-free></app-free>
+</ng-template>
+
+
 
 

@@ -6,7 +6,7 @@ $font-size-title: 2.1rem;
   display: flex;
   flex-direction: column;
   min-width: 480px;
-  min-height: 287px;
+  min-height: 425px;
   border: solid 1px black;
 
   .row {
@@ -41,7 +41,7 @@ $font-size-title: 2.1rem;
     }
 
     &__table {
-      height: 14.7rem;
+      height: 30rem;
       overflow: auto;
       th{
         font-weight: bold;

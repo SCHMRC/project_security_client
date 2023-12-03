@@ -44,6 +44,14 @@ export class HttpService {
     } )
   }
 
+  getTimeStartExitClass(idClasseFK: string): Observable<any> {
+    return this.http.get<any>(`${environment.APIHOME}uscite/last-exit-class/${idClasseFK}`)
+  }
+
+  getTimeEndExitClass(idClasseFK: string): Observable<any> {
+    return this.http.get<any>(`${environment.APIHOME}uscite/end-exit-class/${idClasseFK}`)
+  }
+
   getSummaryLocali(): Observable<Result> {
     return this.http.get<Result>(`${environment.APIHOME}${this.obj[3]}/summary`, {
       responseType: 'json'

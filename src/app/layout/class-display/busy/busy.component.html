@@ -4,14 +4,14 @@
   </div>
   <div class="row row__start">
     <div class="row__start-title">Tempo di percorrenza corridoio andata</div>
-    <div class="row__start-title">00 ore 00 minuti 00 secondi</div>
+    <div class="row__start-title">start: {{startAndataCorridoio | date: 'hh:mm:ss'}} | end :{{endAndataCorridoio | date: 'hh:mm:ss'}}</div>
   </div>
   <div class="row row__wc">
-    <div class="row__wc-title">Tempo di percorrenza locale bagno</div>
-    <div class="row__wc-title">00 ore 00 minuti 00 secondi</div>
+    <div class="row__wc-title">Tempo di permanenza locale bagno</div>
+    <div class="row__wc-title">start: {{endAndataCorridoio | date: 'hh:mm:ss'}} | end :{{endPermanenzaBagno | date: 'hh:mm:ss'}}</div>
   </div>
   <div class="row row__back">
     <div class="row__start-title">Tempo di percorrenza corridoio ritorno</div>
-    <div class="row__start-title">00 ore 00 minuti 00 secondi</div>
+    <div class="row__start-title">start: {{endPermanenzaBagno | date: 'hh:mm:ss'}} | end :{{endRitornoCorridoio | date: 'hh:mm:ss'}}</div>
   </div>
 </div>
